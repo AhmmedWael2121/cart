@@ -49,12 +49,9 @@ export class CartComponent implements OnInit {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
-          this._cartService.RemoveAllProductCart().subscribe({
-            next: (data) => {
-              this.cardProducts = data.data;
               this._cartService.count.next(0);
-        }})
-       
+              this.cardProducts = {}as ICart;
+
           swalWithBootstrapButtons.fire({
             title: "Deleted!",
             text: "Cart deleted successfully!",

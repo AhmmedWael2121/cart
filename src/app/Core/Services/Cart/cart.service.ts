@@ -48,11 +48,4 @@ export class CartService {
       
     );
   }
-  RemoveAllProductCart():Observable<any>{
-    return this._http.delete(`https://ecommerce.routemisr.com/api/v1/cart`,{
-      headers:{
-        token:this.token,
-      }
-    });
-  }
 }

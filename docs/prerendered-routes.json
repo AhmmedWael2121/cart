@@ -1,0 +1,13 @@
+{
+  "routes": {
+    "/": {},
+    "/cart": {},
+    "/categories": {},
+    "/forget": {},
+    "/home": {},
+    "/login": {},
+    "/product": {},
+    "/register": {},
+    "/signOut": {}
+  }
+}

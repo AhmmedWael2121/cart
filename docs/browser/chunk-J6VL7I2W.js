@@ -1,0 +1,1 @@
+import{Gb as s,Ua as n,nb as o,ob as i}from"./chunk-BWAXOIWL.js";import"./chunk-EQDQRRRY.js";var p=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["app-sign-out"]],decls:2,vars:0,template:function(e,m){e&1&&(o(0,"p"),s(1,"sign-out works!"),i())},encapsulation:2})};export{p as SignOutComponent};
