@@ -32,7 +32,8 @@ export class CartService {
   }
 
   GetCartProducts(): Observable<any> {
-    return this._http.get(`${env.baseUrl}/api/v1/cart`);
+    return this._http.get(`${env.baseUrl}/api/v1/cart`
+    );
   }
 
   RemoveCartProducts(id: string): Observable<any> {
@@ -48,4 +49,5 @@ export class CartService {
       
     );
   }
+
 }

@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "disc",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -49,13 +49,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500mb",
-                  "maximumError": "400mb"
+                  "maximumWarning": "50mb",
+                  "maximumError": "40mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "400mb",
-                  "maximumError": "800mb"
+                  "maximumWarning": "40mb",
+                  "maximumError": "80mb"
                 }
               ],
               "outputHashing": "all"

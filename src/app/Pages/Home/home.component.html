@@ -44,10 +44,16 @@
 
       <button
         (click)="addToCart(product._id)"
-        class="shadow-lg w-[85%] px-3 py-2 font-bold text-white bg-violet-900 mx-auto rounded-xl"
+        class="cart shadow-lg w-[85%] px-3 py-2 font-bold text-white bg-violet-900 mx-auto rounded-xl"
       >
         {{ "home.cart_btn" | translate }}
       </button>
+      <button
+      (click)="addToWish(product._id)"
+      class="wish shadow-lg w-[85%] px-3 py-2 font-bold text-white bg-violet-900 mx-auto rounded-xl"
+    >
+      {{ "wishlist.title" | translate }}
+    </button>
     </div>
 
     } @empty {

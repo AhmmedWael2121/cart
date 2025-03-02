@@ -9,7 +9,8 @@
     "LoginButton": "تسجيل الدخول",
     "regiserButton":"انشاء حساب",
     "enBtn": "انجليزيه",
-    "arBtn": "عربيه"
+    "arBtn": "عربيه",
+    "wishList": "قائمة الرغبات"
   },
   "home": {
     "Search": "بحث....",
@@ -95,6 +96,14 @@
     "codeValid": "رمز غير صحيح",
     "rePasswordValidation":"كلمة المرور وتأكيد كلمة المرور غير متطابقتين"
   },
+    "wishlist": {
+      "title": "قائمة الرغبات",
+      "Price": "السعر",
+      "Remove": "إزالة",
+      "Cleanwishlist": "تنظيف قائمة الرغبات",
+      "toCart": "انتقل إلى السلة",
+       "TotalWishPrice":"اجمالي السعر"
+    },
   "ProductDetail": "تفاصيل المنتج",
   "Loading":"جاري التحميل...",
 "category":" الفئات",

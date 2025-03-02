@@ -4,7 +4,8 @@ import { CanActivateFn, Router } from '@angular/router';
 
 export const loginGuardGuard: CanActivateFn = (route, state) => {
  const router = inject(Router);
-   if(isPlatformBrowser(inject(PLATFORM_ID))){
+ const _PLATFORM_ID=inject(PLATFORM_ID);
+   if(isPlatformBrowser(_PLATFORM_ID)){
  
      if (localStorage.getItem('token') !== null){
        router.navigate(['/home']);

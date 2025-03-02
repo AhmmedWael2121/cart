@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from '../../Core/Services/Auth/auth.service';
-import { HttpErrorResponse } from '@angular/common/http';
+
 import { Router, RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 @Component({

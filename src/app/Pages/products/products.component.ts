@@ -21,6 +21,7 @@ export class ProductsComponent implements OnInit {
   private readonly _cartService = inject(CartService);
   products: IProducts[] = [];
   card:ICart= {} as ICart;
+  count: number = 0;
   prodctSearch:string ='' 
 
   ngOnInit(): void {
@@ -48,7 +49,8 @@ export class ProductsComponent implements OnInit {
          showConfirmButton: false,
          timer: 1500
         });
-        this.card = data.data
+        this.card = data.data,
+        this._cartService.count.next(data.numOfCartItems);
       
   
     }

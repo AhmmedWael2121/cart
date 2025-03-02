@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  token!:string;
+  token:string =""
   private readonly _router = inject(Router)
   //get token from local storage by jwt-decode
 
