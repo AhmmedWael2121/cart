@@ -1,0 +1,35 @@
+.card{
+    transition: all 0.5s ease-in-out;
+    img{
+      transition: all 0.5s ease-in-out;
+    }
+    button{
+      transform: translate(95%);
+   
+      transition: all 0.5s ease-out;
+    }
+    
+ &:hover{
+    transform:  scale(1.091) ;
+    img{
+      transform: scale(1.01);
+    }
+    
+    button{
+      transform: translate(0);
+      
+    }
+
+ }
+}
+
+.search{
+  &:hover{
+    outline: 0;
+    border: none;
+  }
+  &:focus{
+    outline: 0;
+    
+  }
+}

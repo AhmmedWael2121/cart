@@ -1,0 +1,258 @@
+<section class="w-2/3 mx-auto">
+  <h1>{{'register.Register'| translate}} </h1>
+  <form
+    [formGroup]="registerForm"
+    (ngSubmit)="submitForm()"
+    class="main-sec"
+  >
+    <!-- name field -->
+    <div class="rounded-md px-5 py-4">
+      @let user = registerForm.get('name');
+      <label
+        for="userName"
+        class="label"
+        >{{'register.Name'| translate}}</label
+      >
+      <input
+        type="text"
+        id="userName"
+        formControlName="name"
+        class="input-field"
+        placeholder="{{'register.FullNamePlaceholder'| translate}}"
+      />
+
+      @if (user?.errors && user?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            @if (user?.getError("required")) {
+            <li>{{'errors.name'| translate}}</li>
+            } @else if (user?.getError("minlength")) {
+            <li>{{'errors.nameMin'| translate}}</li>
+            } @else if (user?.getError("maxlength")) {
+
+            <li>{{'errors.nameMax'| translate}}</li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+
+    <!-- email field -->
+    <div class="rounded-md px-5 py-4">
+      @let email = registerForm.get('email');
+      <label for="email" class="label"
+        > {{'register.Email'| translate}}</label
+      >
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        class="input-field"
+        placeholder=" {{'register.EmailPlaceholder'| translate}}"
+      />
+
+      @if (email?.errors && email?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            @if (email?.getError("required")) {
+            <li>{{'errors.email1'| translate}}</li>
+            } @else if (email?.getError("email")) {
+            <li>{{'errors.email2'| translate}}</li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+
+    <!-- Passowrd field -->
+    <div class="rounded-md px-5 py-4">
+      @let password = registerForm.get('password');
+      <label
+        for="password"
+        class="label"
+        >{{'register.Password'| translate}} </label
+      >
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        class="input-field"
+        placeholder="{{'register.PasswordPlaceholder'| translate}} "
+      />
+
+      @if (password?.errors && password?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            @if (password?.getError("required")) {
+            <li>{{'errors.password'| translate}}</li>
+            } @else if (password?.getError("pattern")) {
+            <li>
+              {{'errors.passwordValidation'| translate}}
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+
+    <!-- rePassowrd field -->
+    <div class="rounded-md px-5 py-4">
+      @let rePassword = registerForm.get('password');
+      <label
+        for="rePassword"
+        class="label"
+        >{{'register.RePassword'| translate}}</label
+      >
+      <input
+        type="password"
+        id="rePassword"
+        formControlName="rePassword"
+        class="input-field"
+        placeholder="{{'register.RePasswordPlaceholder'| translate}}"
+      />
+
+      @if (rePassword?.getError('mismatch') && rePassword?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            <li>{{'errors.rePasswordValidation'| translate}}</li>
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+
+    <!-- phone field -->
+    <div class="rounded-md px-5 py-4">
+      @let phone = registerForm.get('phone');
+
+      <label for="phone" class="label"
+        >{{'register.Phone'| translate}}</label
+      >
+      <input
+        type="tel"
+        id="phone"
+        formControlName="phone"
+        class="input-field"
+        placeholder="{{'register.PhonePlaceholder'| translate}}"
+      />
+
+      @if (phone?.errors && phone?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            @if (phone?.getError("required")) {
+            <li>{{'errors.phone1'| translate}}</li>
+            } @else if (phone?.getError("pattern")) {
+            <li>{{'errors.phone2'| translate}}</li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+
+    <button
+    [disabled]="isLoaing"
+      type="submit"
+      class="button w-[40%] mx-auto py-2 hover:text-white  mb-3"
+    >
+
+
+    @if (isLoaing) {
+      <i class="  fas fa-spin fa-spinner"></i>
+    }
+    
+    {{'register.SignUp'| translate}} 
+    </button>
+
+    <!-- Error message binding -->
+    @if (errorMessage) {
+      <p class="bg-violet-100 text-black py-3 px-2 font-medium hover:bg-violet-300 rounded-t-xl   text-center errorMessage "> {{errorMessage}} </p>
+    }
+    @else if (success) {
+      <p class="bg-green-300 text-black py-3 px-2 font-medium hover:bg-violet-300 rounded-t-xl   text-center errorMessage "> {{success}} </p>
+    }
+  </form>
+</section>

@@ -1,0 +1,147 @@
+<section>
+  <h1>{{ 'checkOut.Checkout'| translate }}</h1>
+
+  <form [formGroup]="checkooutForm" class="main-sec" >
+
+
+    <!-- Phone Field -->
+    <div class="rounded-md px-5 py-4">
+      @let phone = checkooutForm.get('phone');
+      <label for="phone" class="label">{{ 'checkOut.PhoneNumber'| translate }}</label>
+      <input
+        id="phone"
+        type="tel"
+        formControlName="phone"
+        class="input-field form-control w-[80%]"
+        placeholder="{{ 'checkOut.PhoneNumberPlaceholder'| translate }}"
+      />
+
+      @if (phone?.errors && phone?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            @if (phone?.getError("required")) {
+            <li>phone is required</li>
+            } @else if(phone?.getError("pattern")) {
+            <li>phone number is invalid</li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+
+    <!-- City Field -->
+    <div class="rounded-md px-5 py-4">
+      @let city = checkooutForm.get('city');
+      <label for="city" class="label">{{ 'checkOut.City'| translate }}</label>
+      <input
+        id="city"
+        type="text"
+        formControlName="city"
+        class="input-field form-control w-[80%]"
+        placeholder="{{ 'checkOut.CityPlaceholder'| translate }}"
+      />
+
+      @if (city?.errors && city?.touched) {
+      <div
+        class="error-section"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            @if (city?.getError("required")) {
+            <li>city is required</li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+
+        <!-- Detail field -->
+        <div class="rounded-md px-5 py-4">
+          @let details = checkooutForm.get('details');
+          <label for="details" class="label">{{ 'checkOut.Details'| translate }}</label>
+          <textarea
+            id="details"
+            formControlName="details"
+            class="input-field form-control w-[80%]"
+            placeholder="{{ 'checkOut.DetailsPlaceholder'| translate }}"
+          ></textarea>
+    
+          @if (details?.errors && details?.touched) {
+          <div
+            class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            role="alert"
+          >
+            <svg
+              class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+              />
+            </svg>
+            <span class="sr-only">Danger</span>
+            <div>
+              <ul class="mt-1.5 list-disc list-inside">
+                @if (details?.getError("required")) {
+                <li>details is required</li>
+                }
+              </ul>
+            </div>
+          </div>
+          }
+        </div>
+
+<div class="btns flex gap-3 my-3 justify-center items-center">
+  <button 
+    type="submit" 
+    (click)="OnlinePayment()" 
+    [disabled]="checkooutForm.invalid" 
+    class="button hover:text-white "
+  >
+  {{ 'checkOut.OnlinePayment'| translate }}
+  </button>
+  <button 
+    type="submit" 
+    (click)="cashPayment()" 
+    [disabled]="checkooutForm.invalid" 
+    class="button hover:text-white"
+  >
+  {{ 'checkOut.CashPayment'| translate }}
+  </button>
+</div>
+  </form>
+</section>

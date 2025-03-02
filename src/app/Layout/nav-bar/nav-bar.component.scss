@@ -1,0 +1,15 @@
+.active{
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.39); // shadow-2xl
+    border-radius: 9999px; // rounded-full
+    padding: 0.5rem 0.75rem;
+    background-color: #7336dc; 
+    color: #ffffff; // text-white
+    transition: all 0.4s ease-in-out;
+}
+.navlinks{
+
+    transition: color 0.2s ease-in-out;
+    &:hover{
+        color: #ffffff;
+    }
+}

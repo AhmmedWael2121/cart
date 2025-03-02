@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  // font-family: "Concert One", serif;
+  // font-family: "Poppins", serif;
+  font-family: "Roboto Condensed", serif;
+}
+
+h1 {
+  @apply font-bold text-violet-900 text-center text-5xl capitalize my-10;
+}
+
+.label {
+  @apply mb-2 capitalize text-lg font-medium text-black;
+}
+
+.main-sec {
+  @apply mx-auto flex w-2/3 flex-col pt-3 justify-center my-10 shadow-md border bg-slate-50 rounded-2xl;
+}
+
+.button {
+  @apply text-wrap mx-auto max-md:w-full py-2 px-5 md:p-1 text-lg rounded-3xl font-bold bg-violet-200  hover:bg-violet-700 hover:scale-105 hover:text-black transition-all duration-500 ease-in-out;
+}
+
+.input-field {
+  @apply border-b-2 shadow-sm shadow-violet-300 text-violet-950 font-medium placeholder-opacity-50 placeholder-violet-950 text-sm rounded-lg w-full p-2.5 focus:outline-none focus:border-transparent focus:shadow-md focus:shadow-violet-200;
+}
+
+.error-message {
+  @apply bg-violet-100 text-black py-3 px-2 font-medium hover:bg-violet-300 rounded-t-xl text-center;
+}
+
+.success-message {
+  @apply bg-green-300 text-black py-3 px-2 font-medium hover:bg-violet-300 rounded-t-xl text-center;
+}
+.error-section {
+  @apply flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400;
+}
+
+// _global-styles.scss
+// _global-styles.scss
+.card {
+  
+  transition: all 0.5s ease-in-out;
+
+  img {
+    transition: all 0.5s ease-in-out;
+  }
+
+  button {
+    transform: translate(95%);
+    transition: all 0.5s ease-out;
+  }
+
+  &:hover {
+    transform: scale(1.091);
+
+    img {
+      transform: scale(1.01);
+    }
+
+    button {
+      transform: translate(0);
+    }
+  }
+}

@@ -1,0 +1,130 @@
+<section class="w-2/3 mx-auto">
+    <h1 >
+      {{'login.title'| translate}}
+    </h1>
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="submitForm()"
+      class="main-sec"
+    >
+
+      <!-- email field -->
+      <div class="rounded-md px-5 py-4">
+        @let email = loginForm.get('email');
+        <label for="email" class="label"
+          >{{'login.Email'| translate}}</label
+        >
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="input-field"
+          placeholder=" {{'login.EmailPlaceholder'| translate}}"
+        />
+  
+        @if (email?.errors && email?.touched) {
+        <div
+          class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+          role="alert"
+        >
+          <svg
+            class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+            />
+          </svg>
+          <span class="sr-only">Danger</span>
+          <div>
+            <ul class="mt-1.5 list-disc list-inside">
+              @if (email?.getError("required")) {
+              <li>{{'errors.email1'| translate}}</li>
+              } @else if (email?.getError("email")) {
+              <li>{{'errors.email2'| translate}}</li>
+              }
+            </ul>
+          </div>
+        </div>
+        }
+      </div>
+  
+      <!-- Passowrd field -->
+      <div class="rounded-md px-5 py-4">
+        @let password = loginForm.get('password');
+        <label
+          for="password"
+          class="label"
+          >{{'login.Password'| translate}}</label
+        >
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="input-field"
+          placeholder="  {{'login.PasswordPlaceholder'| translate}}"
+        />
+  
+        @if (password?.errors && password?.touched) {
+        <div
+          class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+          role="alert"
+        >
+          <svg
+            class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+            />
+          </svg>
+          <span class="sr-only">Danger</span>
+          <div>
+            <ul class="mt-1.5 list-disc list-inside">
+              @if (password?.getError("required")) {
+              <li>{{'errors.password'| translate}}</li>
+              } @else if (password?.getError("pattern")) {
+              <li>
+                {{'errors.passwordValidation'| translate}}
+              </li>
+              }
+            </ul>
+          </div>
+        </div>
+        }
+      </div>
+
+      <div class="flex justify-end items-center my-auto gap-4 px-3">
+        <a class="link-primary underline hover:text-blue-800 hover:font-medium transition-colors duration-100 ease-in-out  py-3 mb-6 " routerLink="/forget">{{'login.ForgetPassword'| translate}}</a>
+        <button
+        [disabled]="loginForm.invalid"
+          type="submit"
+          class=" rounded-3xl px-6 text-lg  font-medium bg-violet-500 hover:bg-violet-700 transition-all text-white duration-500 ease-in-out hover:scale-105 mb-6"
+        >
+    
+    
+        @if (isLoaing) {
+          <i class="  fas fa-spin fa-spinner"></i>
+        }
+        
+        {{'login.LoginButton'| translate}}
+        </button>
+
+      </div>
+  
+      <!-- Error message binding -->
+      @if (errorMessage) {
+        <p class="error-message"> {{errorMessage}} </p>
+      }
+      @else if (success) {
+        <p class="success-message"> {{success}} </p>
+      }
+    </form>
+  </section>
+  

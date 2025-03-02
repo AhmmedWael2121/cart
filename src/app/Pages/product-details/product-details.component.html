@@ -1,0 +1,34 @@
+<h1>{{'ProductDetail' | translate }}</h1>
+<div class="detailCard flex flex-col gap-6 shadow-lg border border-violet-50 rounded-3xl">
+  <i (click)="exit()" class="fa-regular fa-circle-xmark text-violet-900 shadow-lg text-3xl cursor-pointer opacity-75 m-5 ms-auto"></i>
+  <h2 class="w-full font-medium text-center my-5 text-black text-4xl"> {{productItems.title}} </h2>
+    <div class="">
+        <!-- Use p-carousel component -->
+<p-carousel [value]="productItems.images" [numVisible]="1"  [autoplayInterval]="4000" >
+  <ng-template let-img pTemplate="item" >
+    <div class="card m-2 p-4">
+      <div class="mb-4 img-card ">
+        <img [src]="img" class="w-full h-[300px] object-contain" [alt]="productItems.title" />
+      </div>
+      <h2 class="mb-4 font-medium text-center">{{ productItems.title }}</h2>
+    </div>
+  </ng-template>
+</p-carousel>
+
+
+</div>
+    <div class="deailCard__body pe-10   mx-auto pb-10">
+      
+        <p class="  font-light text-violet-800" >   {{productItems.description}} </p>
+     
+        <div class="inner-body-card my-3  flex justify-between items-center ">
+          <p class="text-black font-medium  text-lg"> <span>{{productItems.price}} </span> EGP </p>
+          <p class="text-black font-medium text-lg"> {{productItems.ratingsAverage}} <i class=" far fa-star text-yellow-500 "></i> </p>
+
+
+
+        </div>
+        <button (click)="addToCart(productItems._id)" class=" shadow-lg w-[50%] mx-auto  px-3 py-2 font-bold text-white bg-violet-900  rounded-xl" >add to cart</button>
+    
+    </div>
+</div>

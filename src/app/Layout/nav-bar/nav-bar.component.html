@@ -1,0 +1,128 @@
+<nav class="top-0 bg-violet-400  shadow-xl   dark:bg-gray-900">
+  <div
+    class="capitalize max-w-screen-xl  text-white flex flex-wrap items-center justify-between mx-auto px-2 py-3 scroll-m-4"
+  >
+    <a routerLink="home"  class="flex items-center space-x-2  rtl:space-x-reverse">
+      <img src="/images/freshcart-logo.svg" class="h-12  rounded-full p-2 " alt="freshcart Logo"/>
+    </a>
+    <button
+      data-collapse-toggle="navbar-default"
+      type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden  focus:outline-none focus:ring-2  dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"
+        />
+      </svg>
+    </button>
+    <div class="hidden w-full flex-grow md:flex md:w-auto" id="navbar-default">
+      @if (isLogin()) {
+        <ul
+          class="font-medium ms-auto flex justify-center items-center flex-col   p-4 md:p-0 mt-4  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:text-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+        >
+          <li>
+            <a
+              routerLink="home"
+              routerLinkActive="active "
+              class="  text-black   navlinks    md:p-0 dark:text-white md:dark:text-blue-500"
+              aria-current="page"
+              >{{'navBar.Home'| translate  }}</a
+            >
+          </li>
+
+          <li>
+            <a
+              routerLink="categories"
+              routerLinkActive="active "
+              
+              class=" navlinks text-gray-900 rounded-sm  md:border-0  md:p-0 hover:text-blue-700 dark:text-white "
+              >  {{'navBar.Categories'| translate  }}  </a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="product"
+              routerLinkActive="active "
+              
+              class=" navlinks text-gray-900 rounded-sm  md:border-0  md:p-0 hover:text-blue-700 dark:text-white "
+              >  {{'navBar.product'| translate  }}  </a
+            >
+          </li>
+        </ul>
+      }
+      <ul
+      class="font-medium   hover:text-blue-700 flex justify-center items-center ms-auto flex-col  p-4 md:p-0 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:text-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+      >
+
+      @if (!isLogin()) {
+      <li>
+        <a
+        role="button"
+        routerLink="login"
+          routerLinkActive="active "
+          class="  text-black navlinks my-auto hover:text-blue-700   rounded-sm   md:p-0 dark:text-white md:dark:text-blue-500"
+          aria-current="page"
+          > {{'navBar.LoginButton'| translate  }}</a
+          >
+        </li>
+        <li>
+          <a
+        role="button"
+        routerLink="register"
+          routerLinkActive="active "
+          class="  text-black hover:text-blue-700  navlinks rounded-sm   md:p-0 dark:text-white md:dark:text-blue-500"
+          aria-current="page"
+          >{{'navBar.regiserButton'| translate  }}</a
+          >
+        </li>     
+      }
+      @else {
+        <li>
+          <a
+          role="button"
+            routerLink="cart"
+            routerLinkActive="active"
+            class="  text-gray-900 rounded-sm navlinks flex gap-1 md:border-0  md:p-0 hover:text-blue-700 dark:text-white "
+            > <i class="fas fas fa-cart-plus text-lg  "></i>
+            <span class="wedge text-lg ">{{countCartItems}}</span>
+            </a>
+        </li>
+        <li>
+          <a
+          role="button"
+          routerLink="signOut"
+          routerLinkActive="active "
+          class="  text-black hover:text-blue-700 my-auto  navlinks rounded-sm   md:p-0 dark:text-white md:dark:text-blue-500"
+          aria-current="page"
+          (click)="logOut()"
+          >{{'navBar.SignOut'| translate  }}</a
+          >
+        </li>
+      }
+
+<li class="flex  rounded-md shadow-md">
+  <button type="button" (click)="changeLang('en')" aria-current="page" class="px-3 py-2 text-sm navlinks font-medium text-black rounded-lg hover:bg-violet-700 focus:z-10 focus:ring-2 focus:ring-violet-400 focus:text-white hover:text-white duration-500 transition-all ease-in-out focus:bg-violet-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+    {{'navBar.enBtn'| translate  }}
+  </button>
+  <button type="button" (click)="changeLang('ar')" aria-current="page" class="px-3 py-2 navlinks hover:text-white duration-500 transition-all ease-in-out text-sm font-medium text-black rounded-lg hover:bg-violet-700 focus:z-10 focus:ring-2 focus:ring-violet-400 focus:text-white focus:bg-violet-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+    {{'navBar.arBtn'|translate}}
+  </button>
+</li>
+    </ul>
+    </div>
+  </div>
+</nav>

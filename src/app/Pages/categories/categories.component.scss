@@ -1,0 +1,7 @@
+// component.scss
+@use '../../../styles.scss' as global;
+
+// Now you can use the .card class in your component
+.my-card {
+  @extend .card;
+}
