@@ -1,7 +1,7 @@
 import { env } from './../../Environments/Environments';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import {jwtDecode} from 'jwt-decode';
 import { Router } from '@angular/router';
 
@@ -20,9 +20,13 @@ export class AuthService {
   sendLogin(data:object):Observable<any>{
     return this._httpClient.post(`${env.baseUrl}/api/v1/auth/signin`,data);
   }
-  getUserData():any{
-    this.token = jwtDecode(localStorage.getItem('token')!);
-    console.log(this.token)
+  getUserData():boolean{
+    if(localStorage.getItem("token")){
+      this.token =jwtDecode(localStorage.getItem('token')!)
+      return true
+    }
+    return false
+
   }
 
 
@@ -38,9 +42,8 @@ export class AuthService {
   }
   logOut():void{
     localStorage.removeItem('token');
-    this.token ='';
+  
+    this.token = "";
     this._router.navigate(['/login']);
   }
 }
-
-//'https://ecommerce.routemisr.com/api/v1/categories'

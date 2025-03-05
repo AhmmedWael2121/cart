@@ -9,11 +9,11 @@ import { loginGuardGuard } from './Core/Guards/LoginAuth/login-guard.guard';
 
 export const routes: Routes = [
 
-  {path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path: '', redirectTo: 'home', pathMatch: 'full' },
     {path: '',
-    component: MainLayoutComponent,
+    component: MainLayoutComponent,canActivate:[homeGuardGuard],
     children: [
-      { path: 'home',  loadComponent: () => import('./Pages/Home/home.component').then(c => c.HomeComponent), title: 'Home',canActivate:[homeGuardGuard]},
+      { path: 'home',  loadComponent: () => import('./Pages/Home/home.component').then(c => c.HomeComponent), title: 'Home',},
       { path: 'categories',  loadComponent: () => import('./Pages/categories/categories.component').then(c => c.CategoriesComponent), title: 'Categories' },
       { path: 'details/:productName',  loadComponent: () => import('./Pages/product-details/product-details.component').then(c => c.ProductDetailsComponent), title: 'product Details' },
       {path:"cart" , loadComponent:()=>import('./Pages/cart/cart.component').then(c=>c.CartComponent),title:"Cart"},
@@ -27,7 +27,6 @@ export const routes: Routes = [
       
       {path:'login',loadComponent:()=>import('./Pages/login/login.component').then(c=>c.LoginComponent),title:"Login"},
       {path:'register',loadComponent:()=>import('./Pages/register/register.component').then(c=>c.RegisterComponent),title:"Register"},
-      {path:'signOut',loadComponent:()=>import('./Pages/sign-out/sign-out.component').then(c=>c.SignOutComponent),title:"SignOut"},
       {path:'forget',loadComponent:()=>import('./Pages/forget-password/forget-password.component').then(c=>c.ForgetPasswordComponent),title:
         "ForgotPassword"},
       ]

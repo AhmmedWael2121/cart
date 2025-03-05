@@ -9,6 +9,8 @@ import { ICart } from '../../Shared/Interfaces/Cart/icart';
 import Swal from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
+import { WishlistService } from '../../Core/Services/WishList/wishlist.service';
+import { IWishlist } from '../../Shared/Interfaces/WishList/iwishlist';
 
 @Component({
   selector: 'app-products',
@@ -19,8 +21,10 @@ import { CurrencyPipe } from '@angular/common';
 export class ProductsComponent implements OnInit {
   private readonly _productsService = inject(ProductsService);
   private readonly _cartService = inject(CartService);
+  private readonly _WishlistService = inject(WishlistService);
   products: IProducts[] = [];
   card:ICart= {} as ICart;
+  wish:IWishlist= {} as IWishlist;
   count: number = 0;
   prodctSearch:string ='' 
 
@@ -43,9 +47,9 @@ export class ProductsComponent implements OnInit {
     next: (data) =>{ 
      
         Swal.fire({
-         position: "center",
+         position: "top-right",
          icon: "success",
-         title: "Product added successfully!",
+         title: " added to cart",
          showConfirmButton: false,
          timer: 1500
         });
@@ -56,5 +60,24 @@ export class ProductsComponent implements OnInit {
     }
     })
    
+    }
+
+    addToWish(id: string): void {
+      this._WishlistService.AddWishlist(id).subscribe({
+        next: (data) => {
+    
+          Swal.fire({
+            position: 'top-right',
+            icon: 'success',
+            title: ' added to wishlist',
+            showConfirmButton: false,
+            timer: 1500,
+            customClass:{
+              popup: 'custom-swal',
+            }
+          });
+          this.wish = data.data
+        },
+      });
     }
 }

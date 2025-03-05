@@ -99,10 +99,13 @@
     "wishlist": {
       "title": "قائمة الرغبات",
       "Price": "السعر",
+      "product": "المنتج",
       "Remove": "إزالة",
       "Cleanwishlist": "تنظيف قائمة الرغبات",
       "toCart": "انتقل إلى السلة",
-       "TotalWishPrice":"اجمالي السعر"
+       "TotalWishPrice":"اجمالي السعر",
+        "image": "صورة المنتج",
+        "Action":""
     },
   "ProductDetail": "تفاصيل المنتج",
   "Loading":"جاري التحميل...",

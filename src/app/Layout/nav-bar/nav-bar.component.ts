@@ -17,13 +17,13 @@ export class NavBarComponent implements OnInit {
   private readonly _translateServices = inject(TranslateServices)
   private readonly _cartService = inject(CartService)
   countCartItems:number = 0;
-  isLogin = input<boolean>(true);
+  isLogin = input<boolean>(true)
+
 
   ngOnInit(): void {
     
     this.getProductCart();
     this.getNoOfCartItems();
-   
   }
 
   logOut():void{

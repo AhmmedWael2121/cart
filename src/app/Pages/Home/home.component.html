@@ -42,18 +42,22 @@
         </div>
       </div>
 
-      <button
-        (click)="addToCart(product._id)"
-        class="cart shadow-lg w-[85%] px-3 py-2 font-bold text-white bg-violet-900 mx-auto rounded-xl"
+      <div class="btons flex flex-col gap-2">
+        <button
+          (click)="addToCart(product._id)"
+          class="cart shadow-lg w-[85%] px-3 py-2 font-bold text-white bg-violet-900 mx-auto rounded-xl"
+        >
+          {{ "home.cart_btn" | translate }}
+        </button>
+        <button
+        (click)="addToWish(product._id)" 
+        class="wish shadow-lg w-[85%] px-3 py-2 font-bold text-white bg-violet-900 mx-auto rounded-xl"
       >
-        {{ "home.cart_btn" | translate }}
+      
+        {{ "wishlist.title" | translate }}
       </button>
-      <button
-      (click)="addToWish(product._id)"
-      class="wish shadow-lg w-[85%] px-3 py-2 font-bold text-white bg-violet-900 mx-auto rounded-xl"
-    >
-      {{ "wishlist.title" | translate }}
-    </button>
+
+      </div>
     </div>
 
     } @empty {

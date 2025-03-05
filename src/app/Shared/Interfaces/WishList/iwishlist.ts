@@ -1,5 +1,7 @@
+
 export interface IWishlist {
   sold: number;
+  brand:brand;
   images: string;
   subcategory: Subcategory;
   ratingsQuantity: number;
@@ -11,7 +13,6 @@ export interface IWishlist {
   price: number;
   imageCover: string;
   category: Category;
-  brand: Category;
   ratingsAverage: number;
   createdAt: string;
   updatedAt: string;
@@ -31,4 +32,11 @@ export interface Subcategory {
   name: string;
   slug: string;
   category: string;
+}
+
+export interface brand {
+  _id: string;
+  name: string;
+  slug: string;
+  image: string;
 }

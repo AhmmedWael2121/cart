@@ -1,49 +1,55 @@
-
 <section>
-    <h1>{{'wishlist.title'|translate}}</h1>
+  <h1>{{ "wishlist.title" | translate }}</h1>
 
-      <div class="main-sec p-4 ">
-        <div class="btn flex items-center justify-end">
-          <button (click)="RemoveWishList()" class="  Remove-btn bg-red-700 shadow-lg hover:scale-105 rounded-3xl px-2 py-1 text-white font-medium hover:bg-red-900 transition-all duration-500 ease-in-out ">{{'cart.CleanChart' | translate }}</button>
-        </div>
+  <div class="main-sec p-4">
+    <table
+      class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+    >
+      <thead
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+      >
+        <tr class="text-center md:text-lg text-base  text-violet-900">
+          <th scope="col" class="px-4 py-3 md:px-16">{{ 'wishlist.image' | translate }} </th>
+          <th scope="col" class="px-4 py-3 md:px-6">{{ 'wishlist.product' | translate }}</th>
+          <th scope="col" class="px-4 py-3 md:px-6">{{ 'wishlist.Price' | translate }}</th>
+          <th scope="col" class="px-4 py-3 md:px-12">{{ 'wishlist.Action' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
         @for (wish of wishLists; track wish._id) {
-        
-        <div class="main-content p-4 grid grid-cols-1 md:grid-cols-[10%_minmax(0,1fr)] gap-4 border-b-2 border-b-violet-950 rounded-2xl">
-           
-          <div class="left-side m-auto">
-            <img [src]="wish.imageCover" class="w-full max-w-[100px] md:max-w-[150px] object-contain" [alt]="wish.title" />
-          </div>
-      
-          <div class="right-side flex flex-col md:flex-row justify-between items-center gap-4 my-4 px-5">
-            <div class="flex flex-col gap-2 items-start justify-center">
-              <h2 class=" md:text-2xl text-xl font-bold text-violet-700">{{ wish.title  }}</h2>
-              <p class="text-sm md:text-base">
-                {{ wish.category.name }}
-              </p>
-              <p class="text-sm md:text-lg">
-                <span class="font-bold text-violet-600">{{'wishlist.Price' | translate }} </span> 
-                {{ wish.price | currency :'GBP' }}
-              </p>
-              <button (click)="RemoveWishListItem(wish._id)" class="cursor-pointer text-sm md:text-lg">
-                <i class="far fa-trash-alt text-red-500"></i> {{'wishlist.Remove' |translate }}
-              </button>
-            </div>
-            
-            <div class="btns flex items-center gap-3">
-              <button (click)="AddIntoWishList(wish._id)" class="btn flex items-center justify-center p-2 bg-violet-100 rounded-full hover:bg-violet-200">
-                <i class="fas fa-minus text-xl"></i>
-              </button>
-              <p class="font-semibold text-xl">{{ wish.ratingsQuantity }}</p>
-              <button (click)="AddIntoWishList(wish._id)" class="btn flex items-center justify-center p-2 bg-violet-100 rounded-full hover:bg-violet-200">
-                <i class="fas fa-plus text-xl"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+        <tr
+          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+        >
+          <td class="px-4 m-auto py-4 md:px-16">
+            <img
+              [src]="wish.imageCover"
+              class="w-16 md:w-32 max-w-full max-h-full"
+              [alt]="wish.title"
+            />
+          </td>
+          <td
+            class="px-4 py-4 md:px-6 text-center font-semibold text-gray-900 dark:text-white"
+          >
+            {{ wish.title }}
+          </td>
+          <td
+            class="px-4 py-4 md:px-6 font-semibold text-gray-900 dark:text-white"
+          >
+            {{ wish.price | currency : "GBP" }}
+          </td>
+          <td
+            class="px-4 py-4 md:px-12 font-semibold text-gray-900 dark:text-white"
+          >
+            <button (click)="RemoveWishListItem(wish.id)" class="wish-btns">
+              Remove
+            </button>
+            <button (click)="addToCart(wish.id)" class="wish-btns">
+              Add to cart
+            </button>
+          </td>
+        </tr>
         }
-        <button [disabled]="" class="cursor-pointer   py-2 btn w-[20%] ms-0 hover:text-white button" routerLink="/cart">{{'wishlist.toCart'|translate  }}</button>
-      </div>
-    
-  </section> 
-
-
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -54,7 +54,11 @@ h1 {
     transform: translate(95%);
     transition: all 0.5s ease-out;
   }
-
+  .wish{
+    transform: translate(-70%);
+ 
+    transition: all 0.7s ease-out;
+  }
   &:hover {
     transform: scale(1.091);
 
@@ -65,5 +69,14 @@ h1 {
     button {
       transform: translate(0);
     }
+    .wish{
+      transform: translate(0);
+      
+    }
   }
 }
+.custom-swal {
+  @apply bg-violet-50 w-[50%] h-fit font-medium mb-3 text-lg flex flex-col justify-center items-center text-violet-700 rounded-3xl;
+  
+}
+

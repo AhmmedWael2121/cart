@@ -41,6 +41,7 @@ export class CartComponent implements OnInit {
     // disable btn if the cart is empty
     if(this.cardProducts.totalCartPrice){
       swalWithBootstrapButtons.fire({
+        position:"top-right",
         title: "Are you sure?",
         icon: "question",
         showCancelButton: true,
@@ -54,7 +55,7 @@ export class CartComponent implements OnInit {
 
           swalWithBootstrapButtons.fire({
             title: "Deleted!",
-            text: "Cart deleted successfully!",
+            text: " deleted successfully!",
             icon: "success"
           });
         } else if (

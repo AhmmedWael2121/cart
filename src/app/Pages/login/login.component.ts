@@ -19,7 +19,7 @@ export class LoginComponent {
 
    errorMessage:string ="";
     success:string ="";
-    isLoaing : boolean = false;
+
     private readonly _authService = inject(AuthService);
     private readonly _router = inject(Router);
     loginForm: FormGroup = new FormGroup(
@@ -35,24 +35,27 @@ export class LoginComponent {
   
     submitForm(): void {
       if (this.loginForm.valid) {
-        this.isLoaing = true
         this._authService.sendLogin(this.loginForm.value).subscribe({
           next: (res) => {
             if(res.message === "success"){
               this.success = res.message;
               setTimeout(() => {
+
                 //assign token in local storage
                 localStorage.setItem("token",res.token)
                 //validate token --> assign data from JWT
                 this._authService.getUserData()
                 //redirect to home page
                 this._router.navigate(["/home"])
+          
                 
               }, 1500);
-              this.isLoaing = false;
+
             }
+
           }
         });
+
       }
     }
 }

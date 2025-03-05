@@ -99,10 +99,14 @@
   "wishlist": {
     "title": "wishlist",
     "Price": "Price",
+    "product": "product",
     "Remove": "Remove",
     "Cleanwishlist": "Clean wishlist",
     "toCart": "go to cart",
-    "TotalWishPrice":"TotalWishPrice"
+    "TotalWishPrice":"TotalWishPrice",
+    "image":"image",
+    "Action":"Action"
+
   },
   "ProductDetail":"Product Detail",
   "Loading":"Loading...",
