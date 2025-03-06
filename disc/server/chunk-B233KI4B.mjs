@@ -1,2 +1,0 @@
-import './polyfills.server.mjs';
-import{a,k as i}from"./chunk-JUNOOE3D.mjs";import{L as r,Q as s}from"./chunk-BXWPJ7HK.mjs";var o=class e{constructor(t){this.http=t}getWishlist(){return this.http.get(`${i.baseUrl}/api/v1/wishlist`)}AddWishlist(t){return this.http.post(`${i.baseUrl}/api/v1/wishlist`,{productId:t})}RemveWishlistItem(t){return this.http.delete(`${i.baseUrl}/api/v1/wishlist/${t}`)}static \u0275fac=function(n){return new(n||e)(s(a))};static \u0275prov=r({token:e,factory:e.\u0275fac,providedIn:"root"})};export{o as a};
