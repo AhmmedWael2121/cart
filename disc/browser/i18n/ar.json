@@ -1,0 +1,114 @@
+{
+  "navBar": {
+    "FreshCart": "فريش كارت",
+    "Home": "الرئيسية",
+    "product": "المنتجات",
+    "Categories": "الفئات",
+    "SignOut": "تسجيل الخروج",
+    "PopularProducts": "المنتجات الشائعة",
+    "LoginButton": "تسجيل الدخول",
+    "regiserButton":"انشاء حساب",
+    "enBtn": "انجليزيه",
+    "arBtn": "عربيه",
+    "wishList": "قائمة الرغبات"
+  },
+  "home": {
+    "Search": "بحث....",
+    "product_title": "المنتجات الشائعة",
+    "category_title": "الفئات الشائعة",
+    "cart_btn": "أضف إلى السلة",
+    "noData": "لم يتم العثور على منتجات"
+  },
+  "footer": {
+    "copyright": "© 2025 أحمد وائل. جميع الحقوق محفوظة.",
+    "home": "الرئيسية",
+    "privacy_Policy": "سياسة الخصوصية",
+    "licensing": "التراخيص",
+    "contact": "اتصل بنا"
+  },
+  "cart": {
+    "Cart": "عربة التسوق",
+    "WomanShawl": "شال نسائي",
+    "WomensFashion": "أزياء ",
+    "Price": "السعر",
+    "Remove": "إزالة",
+    "CleanChart": "تنظيف عربة التسوق ",
+    "TotalCartPrice": "إجمالي سعر ",
+    "Checkout": "الدفع"
+  },
+  
+  "login": {
+    "title": "تسجيل الدخول",
+    "EmailPlaceholder": "البريد الإلكتروني...",
+    "Email": "البريد الإلكتروني",
+    "PasswordPlaceholder": "كلمة المرور...",
+    "Password": "كلمة المرور",
+    "ForgetPassword": "نسيت كلمة المرور",
+    "LoginButton": "تسجيل الدخول"
+  },
+  "register": {
+    "Register": "انشاء حساب",
+    "Name": "الاسم",
+    "FullNamePlaceholder": "الاسم الكامل...",
+    "Email": "البريد الإلكتروني",
+  "EmailPlaceholder": "البريد الإلكتروني...",
+    "Password": "كلمة المرور",
+    "PasswordPlaceholder": "كلمة المرور...",
+    "RePassword": "إعادة كلمة المرور",
+    "RePasswordPlaceholder": "إعادة كلمة المرور....",
+    "Phone": "الهاتف",
+    "PhonePlaceholder": "الهاتف..",
+    "SignUp": "التسجيل"
+  },
+  "forgetPassword": {
+    "ForgetPassword": "نسيت كلمة المرور",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "البريد الإلكتروني....",
+    "code": "الكود",
+    "codePlaceholder": "الكود....",
+    "sendBtn": "تحقق",
+    "NewPassword": "كلمة المرور الجديدة",
+    "NewPasswordPlaceholder": "  كلمة المرور الجديدة...",
+    "Send": "إرسال"
+  },
+  "checkOut": {
+    "Checkout": "الدفع",
+    "PhoneNumberPlaceholder": " رقم الهاتف  .....",
+    "PhoneNumber": "رقم الهاتف",
+    "CityPlaceholder": "المدينة ..... ",
+    "City": "المدينة  ",
+    "DetailsPlaceholder": "التفاصيل ....",
+    "Details": "التفاصيل ",
+    "CashPayment": "الدفع نقداً",
+    "OnlinePayment": "الدفع عبر الإنترنت"
+  },
+  "errors": {
+    "name": "الاسم مطلوب",
+    "nameMin":"يجب أن يكون الاسم ثلاثة أحرف على الأقل",
+    "nameMax":"يجب أن لا يتجاوز الاسم 20 حرفًا",
+    "phone1": "رقم الهاتف مطلوب",
+    "phone2": "رقم الهاتف غير صحيح",
+    "email1": "البريد الإلكتروني مطلوب",
+    "email2": "يرجى إدخال بريد إلكتروني صحيح",
+    "password": "كلمة المرور مطلوبة",
+    "passwordValidation": "يرجى إدخال كلمة مرور صالحة (8 أحرف على الأقل، حرف كبير واحد، حرف صغير واحد، رقم واحد)",
+    "code": "الرمز مطلوب",
+    "codeValid": "رمز غير صحيح",
+    "rePasswordValidation":"كلمة المرور وتأكيد كلمة المرور غير متطابقتين"
+  },
+    "wishlist": {
+      "title": "قائمة الرغبات",
+      "Price": "السعر",
+      "product": "المنتج",
+      "Remove": "إزالة",
+      "Cleanwishlist": "تنظيف قائمة الرغبات",
+      "toCart": "انتقل إلى السلة",
+       "TotalWishPrice":"اجمالي السعر",
+        "image": "صورة المنتج",
+        "Action":""
+    },
+  "ProductDetail": "تفاصيل المنتج",
+  "Loading":"جاري التحميل...",
+"category":" الفئات",
+"Product":"المنتجات"
+}

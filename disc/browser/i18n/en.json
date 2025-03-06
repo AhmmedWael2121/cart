@@ -1,0 +1,115 @@
+{
+  "navBar": {
+    "FreshCart": "FreshCart",
+    "product": "Products",
+    "Home": "Home",
+    "Categories": "Categories",
+    "SignOut": "Sign Out",
+    "PopularProducts": "Popular Products",
+    "LoginButton": "Login",
+    "regiserButton": "Regiser",
+    "enBtn": "English",
+    "arBtn": "Arabic",
+    "wishList":"wishList"
+  },
+  "home": {
+    "Search": "Search....",
+    "product_title": "popular products",
+    "category_title": "Popular Category",
+    "cart_btn": "Add To Cart",
+    "noData": "No products found"
+  },
+  "footer": {
+    "copyright": "© 2025 Ahmed Wael. All Rights Reserved.",
+    "home": "Home",
+    "privacy_Policy": "Privacy Policy",
+    "licensing": "Licensing",
+    "contact": "Contact"
+  },
+  "cart": {
+    "Cart": "Cart",
+    "WomanShawl": "Woman Shawl",
+    "WomensFashion": "Women",
+    "Price": "Price",
+    "Remove": "Remove",
+    "CleanChart": "Clean chart",
+    "TotalCartPrice": "Total Cart Price",
+    "Checkout": "Checkout"
+  },
+ 
+  "login": {
+    "title": "Login",
+    "EmailPlaceholder": "Email...",
+    "Email": "Email",
+    "PasswordPlaceholder": "Password...",
+    "Password": "Password",
+    "ForgetPassword": "Forget Password",
+    "LoginButton": "Login"
+  },
+  "register": {
+    "Register": "Register",
+    "Name": "Name",
+    "FullNamePlaceholder": "Full name...",
+    "Email": "Email",
+    "EmailPlaceholder": "ُEmail...",
+    "Password": "Password",
+    "PasswordPlaceholder": "password...",
+    "RePassword": "RePassword",
+    "RePasswordPlaceholder": "rePassword....",
+    "Phone": "Phone",
+    "PhonePlaceholder": "Phone..",
+    "SignUp": "Sign Up"
+  },
+  "forgetPassword": {
+    "ForgetPassword": "Forget Password",
+    "email": "Email",
+    "emailPlaceholder": "Email....",
+    "code": "Code",
+    "codePlaceholder": "Code....",
+    "sendBtn": "Vertify",
+    "NewPassword": "New Password",
+    "NewPasswordPlaceholder": " new password...",
+    "Send": "Send"
+  },
+  "checkOut":{
+    "Checkout": "CheckOut",
+    "PhoneNumberPlaceholder": "Phone number...",
+    "PhoneNumber": "Phone",
+    "CityPlaceholder": " City...",
+    "City": " City",
+    "DetailsPlaceholder": "Details... ",
+    "Details": "Details",
+    "CashPayment": "Cash Payment",
+    "OnlinePayment": "Online Payment"
+  },
+  "errors":{
+    "name":"phone is required",
+    "nameMin":"At least 3 characters",
+    "nameMax":"Ensure the name is not more than 20 characters long",
+    "phone1":"phone is required",
+    "phone2":"phone is invalid",
+    "email1":"email is required",
+    "email2":"enter a valid email address",
+    "code":"code is required",
+    "codeValid":"Invalid code",
+    "password":"password is required",
+    "passwordValidation":"Please enter a valid password (at least 8 characters, 1 uppercase, 1 lowercase, 1 number)",
+    "rePasswordValidation":"Password and confirm password do not match"
+  },
+  "wishlist": {
+    "title": "wishlist",
+    "Price": "Price",
+    "product": "product",
+    "Remove": "Remove",
+    "Cleanwishlist": "Clean wishlist",
+    "toCart": "go to cart",
+    "TotalWishPrice":"TotalWishPrice",
+    "image":"image",
+    "Action":"Action"
+
+  },
+  "ProductDetail":"Product Detail",
+  "Loading":"Loading...",
+  "category":"Categories",
+  "Product":"Products"
+}
